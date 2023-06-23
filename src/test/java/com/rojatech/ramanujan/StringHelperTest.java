@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Test;
 
 class StringHelperTest {
 
+	StringHelper sh = new StringHelper();
+	
 	@Test
-	void testTruncateAInFirstTwoCharacters() {
-		StringHelper sh = new StringHelper();
+	void testTruncateAInFirstTwoCharacters() { 
+
 		assertEquals("CD", sh.truncateAInFirstTwoCharacters("AACD"));
 		assertEquals("CAD", sh.truncateAInFirstTwoCharacters("ACAD"));
 		assertEquals("CDAB", sh.truncateAInFirstTwoCharacters("CDAB"));
@@ -17,7 +19,6 @@ class StringHelperTest {
 	
 	@Test
 	void testTruncateFirstTwoCharacters() {
-		StringHelper sh = new StringHelper();
 		assertEquals("CD", sh.truncateFirstTwoCharacters("AACD"));
 		assertEquals("AD", sh.truncateFirstTwoCharacters("ACAD"));
 		assertEquals("AB", sh.truncateFirstTwoCharacters("CDAB"));
@@ -27,7 +28,6 @@ class StringHelperTest {
 
 	@Test
 	void testareFirstTwoAndLastTwoCharactersTheSame() {
-		StringHelper sh = new StringHelper();
 		assertEquals(false, sh.areFirstTwoAndLastTwoCharactersTheSame("AACD"));
 		assertEquals(true, sh.areFirstTwoAndLastTwoCharactersTheSame("ABAB"));
 		assertEquals(true, sh.areFirstTwoAndLastTwoCharactersTheSame("CD"));
