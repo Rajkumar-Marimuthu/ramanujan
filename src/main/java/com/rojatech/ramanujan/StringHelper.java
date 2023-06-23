@@ -7,7 +7,7 @@ public class StringHelper {
 
 	// Truncate first 2 characters. E.g. ABCD => CD,  4356 => 56
 	public String truncateFirstTwoCharacters(String str) {
-		return "";
+		return str.substring(2);
 	}
 
 	// Truncate A in first 2 characters. E.g. ABCD => BCD,  4356 => 4356, BCAA => BCAA, BABA => BBA
