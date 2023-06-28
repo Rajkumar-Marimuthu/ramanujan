@@ -2,23 +2,47 @@ package com.rojatech.ramanujan;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.Test;
+import java.util.Arrays;
+import java.util.Collection;
 
-class StringHelperTest {
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
+@RunWith(Parameterized.class)
+public class StringHelperTest {
+
+	
 	StringHelper sh = new StringHelper();
 	
-	@Test
-	void testTruncateAInFirstTwoCharacters() { 
-
-		assertEquals("CD", sh.truncateAInFirstTwoCharacters("AACD"));
-		assertEquals("CAD", sh.truncateAInFirstTwoCharacters("ACAD"));
-		assertEquals("CDAB", sh.truncateAInFirstTwoCharacters("CDAB"));
-		assertEquals("CDAA", sh.truncateAInFirstTwoCharacters("CDAA"));
+	private String input;
+	private String expectedOutput;
+	
+	
+	public StringHelperTest(String input, String expectedOutput) {
+		this.input = input;
+		this.expectedOutput = expectedOutput;
+	}
+	
+	@Parameters
+	public static Collection<String[]> testConditions() {
+		String expectedOutputs[][] = {
+				{"AACD", "CD"},
+				{"ACAD", "CAD"},
+				{"CDAB", "CDAB"},
+				{"CDAA", "CDAA"}
+		};
+		return Arrays.asList(expectedOutputs);
 	}
 	
 	@Test
-	void testTruncateFirstTwoCharacters() {
+	public void testTruncateAInFirstTwoCharacters() { 
+		assertEquals(expectedOutput, sh.truncateAInFirstTwoCharacters(input));
+	}
+	
+	@Test
+	public void testTruncateFirstTwoCharacters() {
 		assertEquals("CD", sh.truncateFirstTwoCharacters("AACD"));
 		assertEquals("AD", sh.truncateFirstTwoCharacters("ACAD"));
 		assertEquals("AB", sh.truncateFirstTwoCharacters("CDAB"));
@@ -27,7 +51,7 @@ class StringHelperTest {
 	}
 
 	@Test
-	void testareFirstTwoAndLastTwoCharactersTheSame() {
+	public void testareFirstTwoAndLastTwoCharactersTheSame() {
 		assertEquals(false, sh.areFirstTwoAndLastTwoCharactersTheSame("AACD"));
 		assertEquals(true, sh.areFirstTwoAndLastTwoCharactersTheSame("ABAB"));
 		assertEquals(true, sh.areFirstTwoAndLastTwoCharactersTheSame("CD"));
