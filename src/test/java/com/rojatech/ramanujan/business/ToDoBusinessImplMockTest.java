@@ -40,6 +40,20 @@ public class ToDoBusinessImplMockTest {
 	}
 	
 	@Test
+	public void testdeleteToDoNotRelatedToStringBDD() {
+		// Given
+		ToDoService toDoServiceMock = mock(ToDoService.class);
+		given(toDoServiceMock.retrieveToDos("dummy")).willReturn(Arrays.asList("Learn Spring MVC", "Learn Spring Boot", "Learn Python"));
+		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
+		
+		// When
+		toDoBusinessImpl.deleteToDoNotRelatedToString("dummy");
+		List<String> filteredToDosList = toDoBusinessImpl.retriveToDoRelatedToString("dummy");
+		// Then
+		assertThat(filteredToDosList.size(),is(2));
+	}
+	
+	@Test
 	public void testRetriveToDoRelatedToString_usingMockEmptyList() {
 		ToDoService toDoServiceMock = mock(ToDoService.class);
 		when(toDoServiceMock.retrieveToDos("dummy")).thenReturn(Arrays.asList("Learn MVC","Learn Python", "Learn Cloud"));

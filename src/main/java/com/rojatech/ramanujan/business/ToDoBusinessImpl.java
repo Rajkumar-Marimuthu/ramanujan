@@ -24,5 +24,16 @@ public class ToDoBusinessImpl {
 		
 		return filteredToDos;
 	}
+	
+	public void deleteToDoNotRelatedToString(String user) {
+		List<String> filteredToDos = new ArrayList<String>();
+		List<String> toDos = toDoService.retrieveToDos(user);
+		
+		for (String toDo: toDos) {
+			if (!toDo.contains("Spring")) {
+				toDoService.deleteToDo(toDo);
+			}
+		}
+	}
 
 }
