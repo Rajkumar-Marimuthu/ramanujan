@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Matchers.anyInt;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -27,7 +28,8 @@ public class ListTest {
 	@Test
 	public void testMockListGetMethod() {
 		List listMock = mock(List.class);
-		when(listMock.get(0)).thenReturn("myname");
+		when(listMock.get(anyInt())).thenReturn("myname");
 		assertEquals("myname", listMock.get(0));
+		assertEquals("myname", listMock.get(1));
 	}
 }
