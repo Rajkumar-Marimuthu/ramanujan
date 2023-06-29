@@ -1,6 +1,9 @@
 package com.rojatech.ramanujan.business;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -23,6 +26,20 @@ public class ToDoBusinessImplMockTest {
 	}
 	
 	@Test
+	public void testRetriveToDoRelatedToString_BDD() {
+		//Given
+		ToDoService toDoServiceMock = mock(ToDoService.class);
+		given(toDoServiceMock.retrieveToDos("dummy")).willReturn(Arrays.asList("Learn Spring MVC","Learn Spring", "Learn Python"));
+		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
+		
+		// When
+		List<String> filteredToDos = toDoBusinessImpl.retriveToDoRelatedToString("dummy"); 
+		// Then
+		
+		assertThat(filteredToDos.size(),is(2));
+	}
+	
+	@Test
 	public void testRetriveToDoRelatedToString_usingMockEmptyList() {
 		ToDoService toDoServiceMock = mock(ToDoService.class);
 		when(toDoServiceMock.retrieveToDos("dummy")).thenReturn(Arrays.asList("Learn MVC","Learn Python", "Learn Cloud"));
@@ -30,5 +47,4 @@ public class ToDoBusinessImplMockTest {
 		List<String> filteredToDos = toDoBusinessImpl.retriveToDoRelatedToString("dummy"); 
 		assertEquals(0, filteredToDos.size());
 	}
-
 }
