@@ -31,5 +31,15 @@ public class ListTest {
 		when(listMock.get(anyInt())).thenReturn("myname");
 		assertEquals("myname", listMock.get(0));
 		assertEquals("myname", listMock.get(1));
+		
+		when(listMock.get(anyInt())).thenReturn(new RuntimeException("Something went wrong"));
+		listMock.get(0);
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void testMockListGetMethodException() {
+		List listMock = mock(List.class);
+		when(listMock.get(anyInt())).thenThrow(new RuntimeException("Something went wrong"));
+		listMock.get(0);
 	}
 }
