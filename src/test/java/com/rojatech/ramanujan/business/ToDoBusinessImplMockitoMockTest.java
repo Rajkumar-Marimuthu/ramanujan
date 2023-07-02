@@ -14,24 +14,37 @@ import static org.mockito.Mockito.when;
 import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import com.rojatech.ramanujan.data.api.ToDoService;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ToDoBusinessImplMockitoMockTest {
+	
+	@Rule
+	public MockitoRule mockitoRule = MockitoJUnit.rule();
 	
 	@Mock
 	ToDoService toDoServiceMock;
 
+	@InjectMocks
+	ToDoBusinessImpl toDoBusinessImpl;
+	
+	@Captor
+	ArgumentCaptor<String> stringArgumentCaptor = ArgumentCaptor.forClass(String.class);
+			
+			
 	@Test
 	public void testRetriveToDoRelatedToString_usingMock() {
 		when(toDoServiceMock.retrieveToDos("dummy")).thenReturn(Arrays.asList("Learn Spring MVC","Learn Spring", "Learn Python"));
-		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
 		List<String> filteredToDos = toDoBusinessImpl.retriveToDoRelatedToString("dummy"); 
 		assertEquals(2, filteredToDos.size());
 	}
@@ -40,7 +53,6 @@ public class ToDoBusinessImplMockitoMockTest {
 	public void testRetriveToDoRelatedToString_BDD() {
 		//Given
 		given(toDoServiceMock.retrieveToDos("dummy")).willReturn(Arrays.asList("Learn Spring MVC","Learn Spring", "Learn Python"));
-		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
 		
 		// When
 		List<String> filteredToDos = toDoBusinessImpl.retriveToDoRelatedToString("dummy"); 
@@ -53,7 +65,6 @@ public class ToDoBusinessImplMockitoMockTest {
 	public void testdeleteToDoNotRelatedToStringBDD() {
 		// Given
 		given(toDoServiceMock.retrieveToDos("dummy")).willReturn(Arrays.asList("Learn Spring MVC", "Learn Spring Boot", "Learn Python"));
-		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
 		
 		// When
 		toDoBusinessImpl.deleteToDoNotRelatedToString("dummy");
@@ -67,13 +78,9 @@ public class ToDoBusinessImplMockitoMockTest {
 	
 	@Test
 	public void testdeleteToDoNotRelatedToStringBDD_argumentCapture() {
-		// Declare argument captor
-		ArgumentCaptor<String> stringArgumentCaptor = ArgumentCaptor.forClass(String.class);
 		
-		// Define Argument captor on specific method call
 		// Given
 		given(toDoServiceMock.retrieveToDos("dummy")).willReturn(Arrays.asList("Learn Spring MVC", "Learn Angular", "Learn Python"));
-		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
 		
 		// When
 		toDoBusinessImpl.deleteToDoNotRelatedToString("dummy");
@@ -87,7 +94,6 @@ public class ToDoBusinessImplMockitoMockTest {
 	@Test
 	public void testRetriveToDoRelatedToString_usingMockEmptyList() {
 		when(toDoServiceMock.retrieveToDos("dummy")).thenReturn(Arrays.asList("Learn MVC","Learn Python", "Learn Cloud"));
-		ToDoBusinessImpl toDoBusinessImpl = new ToDoBusinessImpl(toDoServiceMock);
 		List<String> filteredToDos = toDoBusinessImpl.retriveToDoRelatedToString("dummy"); 
 		assertEquals(0, filteredToDos.size());
 	}
