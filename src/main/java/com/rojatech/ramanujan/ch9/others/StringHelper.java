@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan;
+package com.rojatech.ramanujan.ch9.others;
 
 import java.util.Arrays;
 import java.util.List;
