@@ -42,13 +42,5 @@ public class ArrayListDemo {
 		values.add(3);
 		values.add("Naveen");
 		System.out.println(values); // [3, Naveen]
-
-
-
-
-
-
-
-
 	}
 }
