@@ -26,7 +26,7 @@ public class ToDoBusinessImpl {
 	}
 	
 	public void deleteToDoNotRelatedToString(String user) {
-		List<String> filteredToDos = new ArrayList<String>();
+		//List<String> filteredToDos = new ArrayList<String>();
 		List<String> toDos = toDoService.retrieveToDos(user);
 		
 		for (String toDo: toDos) {
@@ -35,5 +35,4 @@ public class ToDoBusinessImpl {
 			}
 		}
 	}
-
 }

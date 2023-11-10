@@ -3,10 +3,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
+/*
+ * 
+	Java does not have a built-in Regular Expression class, but we can import the java.util.regex package to work with regular expressions. The package includes the following classes:
+	Pattern Class - Defines a pattern (to be used in a search)
+	Matcher Class - Used to search for the pattern
+	PatternSyntaxException Class - Indicates syntax error in a regular expression pattern
+*/
+	
 public class RegExDemo {
 
 	public static boolean isEmailValid(String email) {
-		String emailRegExp = "^[a-zA-Z0-9_+&*-]+.@[a-zA-Z0-9_+&*-.]+$";
+		String emailRegExp = "^[a-zA-Z0-9_+&*-.]+.@[a-zA-Z0-9_+&*-.]+$";
 		
 		Pattern pat = Pattern.compile(emailRegExp);
 		if (email == null) 
@@ -18,7 +26,7 @@ public class RegExDemo {
 		System.out.println(Pattern.matches("[abc]", "d")); // false
 		System.out.println(Pattern.matches("[^abc]", "d")); // true
 		System.out.println(Pattern.matches("[a-z&&[def]]", "d")); // true
-		System.out.println(Pattern.matches("[0-9]+$", "2011"));
+		System.out.println(Pattern.matches("[0-9]+$", "2011")); // true
 	
 		String str = "+a-+b";
 		System.out.println(str.replaceAll("\\+", "\\#"));
@@ -38,8 +46,5 @@ public class RegExDemo {
 				System.out.println(email + " - not valid");
 			}
 		});
-		
-
 	}
-
 }
