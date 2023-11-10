@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch9.others;
+package com.rojatech.ramanujan.ch9.regex;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
