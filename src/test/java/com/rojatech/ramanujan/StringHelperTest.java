@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import com.rojatech.ramanujan.ch9.others.StringHelper;
+import com.rojatech.ramanujan.ch09.others.StringHelper;
 
 @RunWith(Parameterized.class)
 public class StringHelperTest {
