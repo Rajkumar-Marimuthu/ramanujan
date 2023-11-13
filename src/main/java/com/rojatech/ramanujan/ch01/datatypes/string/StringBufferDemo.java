@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch01.datatypes;
+package com.rojatech.ramanujan.ch01.datatypes.string;
 
 public class StringBufferDemo {
 
