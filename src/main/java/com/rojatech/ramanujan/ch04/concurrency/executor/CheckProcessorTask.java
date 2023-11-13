@@ -14,10 +14,8 @@ public class CheckProcessorTask implements Runnable {
 		try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Check processing ended for " + name + " in thread " + Thread.currentThread().getName());
 	}
-
 }

@@ -33,7 +33,5 @@ public class SingletonDemo2 {
 		System.out.println(sd);
 		SingletonDemo2 sd1 = SingletonDemo2.getInstance();
 		System.out.println(sd1);
-
 	}
-
 }

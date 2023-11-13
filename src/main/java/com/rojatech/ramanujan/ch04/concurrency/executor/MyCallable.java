@@ -13,14 +13,10 @@ public class MyCallable implements Callable<Integer> {
 	@Override
 	public Integer call() throws Exception {
 		System.out.println(Thread.currentThread().getName() + "calculating sum of all numbers upto " + num); 
-		int sum = 0;
-		
+		int sum = 0;		
 		for(int i=0; i<=num; i++) {
 			sum += i;
 		}
-		
 		return sum;
-
 	}
-
 }

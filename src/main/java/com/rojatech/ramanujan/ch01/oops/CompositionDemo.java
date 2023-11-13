@@ -18,7 +18,6 @@ class Book {
     // Constructor of Book class
     Book(String title, String author)
     {
- 
         // This keyword refers to current instance itself
         this.title = title;
         this.author = author;
@@ -34,7 +33,6 @@ class Library {
     // Library class contains list of books
     Library(List<Book> books)
     {
- 
         // Refering to same book as
         // this keyword refers to same instance itself
         this.books = books;
@@ -44,7 +42,6 @@ class Library {
     // To get total number of books in library
     public List<Book> getTotalBooksInLibrary()
     {
- 
         return books;
     }
 }
@@ -79,14 +76,11 @@ public class CompositionDemo {
  
         // Iterating over books using for each loop
         for (Book bk : bks) {
- 
             // Printing the title and author name of book on
             // console
             System.out.println("Title : " + bk.title
                                + " and "
                                + " Author : " + bk.author);
         }
-
 	}
-
 }

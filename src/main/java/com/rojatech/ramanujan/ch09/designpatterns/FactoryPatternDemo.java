@@ -71,8 +71,5 @@ public class FactoryPatternDemo {
 		Plan p = planFactory.getPlan(planName);
 		p.getRate();
 		p.calculateBill(units);
-		
-
 	}
-
 }
