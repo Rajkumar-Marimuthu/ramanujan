@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch09.designpatterns;
+package com.rojatech.ramanujan.ch09.designpatterns.adapter;
 interface MediaPlayer {
 	void play(String audioType, String fileName);
 }

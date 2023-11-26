@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch09.designpatterns;
+package com.rojatech.ramanujan.ch09.designpatterns.adapter;
 interface Movable {
 	// returns speed in MPH
 	double getSpeed();

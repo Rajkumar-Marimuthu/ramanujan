@@ -20,8 +20,8 @@ public class ConcurentHashMapDemo extends Thread {
 	
 	public static void main(String[] args) {
 	
-	ConcurentHashMapDemo m = new ConcurentHashMapDemo();
-	m.start();
+	ConcurentHashMapDemo th = new ConcurentHashMapDemo();
+	th.start();
 	
 	coursesRating.put("Java", "10.0");
 	coursesRating.put("V", "9.0");

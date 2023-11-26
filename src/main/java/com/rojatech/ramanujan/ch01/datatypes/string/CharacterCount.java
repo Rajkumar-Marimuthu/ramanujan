@@ -6,6 +6,8 @@ import java.util.Map;
 public class CharacterCount {
 
 	public static void main(String[] args) {
+		String blank = "";
+		System.out.println("count of blank: " + blank.length());
 		String str = "Hello how are you";
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 		

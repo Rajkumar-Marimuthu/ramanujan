@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch09.designpatterns;
+package com.rojatech.ramanujan.ch09.designpatterns.factory;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

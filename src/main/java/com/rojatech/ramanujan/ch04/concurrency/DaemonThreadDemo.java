@@ -15,7 +15,8 @@ public class DaemonThreadDemo {
 			}
 		});
 		
-		myThread.setDaemon(false);
+		//myThread.setDaemon(true); // daemon thread - main thread doesn't wait for daemon thread completion
+		myThread.setDaemon(false); // user thread
 		System.out.println("Start Daemon Thread");
 		myThread.start();
 		System.out.println("Main thread end..");

@@ -16,7 +16,6 @@ class Q {
 }
 
 class Producer implements Runnable {
-	
 	Q q;
 
 	public Producer(Q q) {
@@ -41,7 +40,6 @@ class Producer implements Runnable {
 }
 
 class Consumer implements Runnable {
-	
 	Q q;
 
 	public Consumer (Q q) {

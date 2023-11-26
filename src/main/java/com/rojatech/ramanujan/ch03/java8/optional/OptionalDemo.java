@@ -28,30 +28,28 @@ public class OptionalDemo {
 	public static void main(String[] args) {
 		
 		Optional<User> emptyUser = Optional.empty();
-		System.out.println(emptyUser.isEmpty());
+		System.out.println(emptyUser.isEmpty()); // true
 		
 		Optional<User> newUser = Optional.of(new User("Tom"));
-		System.out.println(newUser.isPresent());
-		System.out.println(newUser.orElseThrow(() -> new NullPointerException("No Element")));
+		System.out.println(newUser.isPresent()); // true
+		System.out.println(newUser.orElseThrow(() -> new NullPointerException("No Element"))); // User [name=Tom]
 		
 		User user = null;
+		//Optional<User> newUser2 = Optional.of(user); // java.lang.NullPointerException
 		Optional<User> newUser1 = Optional.ofNullable(user);
-		System.out.println(newUser1.isPresent());
+		System.out.println(newUser1.isPresent()); // false
 
-		System.out.println(newUser1.orElse(new User("Maike")));
-		System.out.println(newUser1.orElseGet(() -> new User("Maike")));
+		System.out.println(newUser1.orElse(new User("Maike"))); // User [name=Maike]
+		System.out.println(newUser1.orElseGet(() -> new User("Maike"))); // User [name=Maike]
 		//System.out.println(newUser1.orElseThrow(() -> new NullPointerException("No Element")));
 
-		//Optional<User> newUser2 = Optional.of(user); // java.lang.NullPointerException
-		//System.out.println(newUser2.isPresent());
-
-		List<String> fruits = List.of("apple", "banana", "mango");
+		List<String> fruits = List.of("apple", "banana", "mango", "berry");
 		Optional<String> matched = fruits.stream().filter(fruit -> fruit.startsWith("b")).findFirst();
-		System.out.println(matched);
-		System.out.println(matched.isEmpty());
-		System.out.println(matched.isPresent());
-		System.out.println(matched.get());
-		matched.ifPresent(System.out::println);
+		System.out.println(matched); // Optional[banana]
+		System.out.println(matched.isEmpty()); // false
+		System.out.println(matched.isPresent()); // true
+		System.out.println(matched.get()); // banana
+		matched.ifPresent(System.out::println); // banana
 		
 		Optional<String> matched1 = fruits.stream().filter(fruit -> fruit.startsWith("s")).findFirst();
 		//System.out.println(matched1.get()); // java.util.NoSuchElementException

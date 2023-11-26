@@ -90,9 +90,7 @@ class Consumer2 implements Runnable {
 }
 
 public class InterThreadDemo2 {
-
 	public static void main(String[] args) {
-		
 		Q2 q = new Q2();
 		new Producer2(q);
 		new Consumer2(q);

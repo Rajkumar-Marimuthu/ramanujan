@@ -7,13 +7,15 @@ import java.util.List;
 public class LinkedListDemo {
 
 	public static void main(String[] args) {
-		List<String> ll = new LinkedList<>();
+		LinkedList<String> ll = new LinkedList<>();
 		ll.add("Chennai");
 		ll.add("Newyork");
 		ll.add("Paris");
 		ll.add("London");
-		
+		ll.add(2, "Frankfurt");
+		ll.addFirst("Madurai");
 		System.out.println("Before removal list : " + ll); // [Chennai, Newyork, Paris, London]
+		System.out.println(ll.get(3));
 		
 		// This remove code will throw java.util.ConcurrentModificationException
 		/* for (String string : ll) {
