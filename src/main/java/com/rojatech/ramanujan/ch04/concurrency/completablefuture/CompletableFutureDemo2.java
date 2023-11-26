@@ -32,5 +32,4 @@ public class CompletableFutureDemo2 {
 			e.printStackTrace();
 		}
 	}
-
 }

@@ -15,7 +15,7 @@ public class HashSetDemo {
 		Random random = new Random();
 		
 		for (int i=0; i<10; i++) {
-			list.add(random.nextInt(5));
+			list.add(random.nextInt(20));
 		}
 		System.out.println(list);
 		

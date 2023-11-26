@@ -23,7 +23,6 @@ public class HashMapDemoP4 {
 		phoneBook.put("Avanija", "8765432106");
 		
 		System.out.println(phoneBook); // {Rajkumar=9876543210, Risanth=8765432107, Avanija=8765432106, Racshana=8765432108, Marimuthu=8765432109}
-		
 		System.out.println(phoneBook.get("Avanija")); // 8765432106
 		
 		Set<String> keys = phoneBook.keySet();
@@ -31,7 +30,6 @@ public class HashMapDemoP4 {
 		/*
 		 * for (String str : keys) { System.out.println(phoneBook.get(str)); }
 		 */
-		
 		keys.forEach(k->System.out.println(phoneBook.get(k)));
 		
 		Set<Map.Entry<String, String>> entries = phoneBook.entrySet();

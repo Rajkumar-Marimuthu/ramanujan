@@ -16,6 +16,7 @@ public class ComparatorDemo {
 		System.out.println(values);
 		
 		Collections.sort(values, new ComparatorImpl());
+		System.out.println(values);
 	}
 
 }
