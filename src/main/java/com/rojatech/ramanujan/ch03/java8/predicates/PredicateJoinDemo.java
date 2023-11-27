@@ -14,7 +14,6 @@ public class PredicateJoinDemo {
 		System.out.println("Numbers greather than 10 and even");
 		m1(pr1.and(pr2),x);
 		
-		
 	}
 
 	static public void m1(Predicate<Integer> p, int[] x) {

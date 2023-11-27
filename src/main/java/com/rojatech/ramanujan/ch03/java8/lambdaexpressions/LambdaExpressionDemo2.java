@@ -10,7 +10,6 @@ public class LambdaExpressionDemo2 {
 		
 		
 		r1.run();
-		
 		r2.run();
 	}
 

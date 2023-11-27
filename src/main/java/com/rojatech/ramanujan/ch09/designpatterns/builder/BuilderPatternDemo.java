@@ -8,7 +8,8 @@ public class BuilderPatternDemo {
 		Person person = builder.setName("Raj").setAge(37).setAddress("London").build();
 		System.out.println(person.toString());
 		
-		PersonDirector director = new PersonDirector(builder);
+		PersonBuilder builder1 = new PersonBuilderImpl();
+		PersonDirector director = new PersonDirector(builder1);
 		Person person1 = director.construct();
 		System.out.println(person1.toString());
 	}

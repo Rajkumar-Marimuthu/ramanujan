@@ -70,7 +70,7 @@ public class MethodReferenceDemo3 {
 		nameList.add("Sachin");
 		
 		Collections.sort(nameList, String::compareTo);
-		
+		System.out.println(nameList);
 		nameList.stream().forEach(System.out::println);
 	}
 

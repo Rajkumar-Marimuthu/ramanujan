@@ -9,6 +9,7 @@ public class SingletonDemo {
 	
 	static {
 		singletonDemo = new SingletonDemo();
+		System.out.println(singletonDemo);
 	}
 	
 	private SingletonDemo() {

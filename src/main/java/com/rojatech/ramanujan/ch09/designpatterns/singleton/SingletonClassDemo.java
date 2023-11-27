@@ -6,5 +6,7 @@ public class SingletonClassDemo {
 		SingletonClass instance1 = SingletonClass.getInstance();
 		SingletonClass instance2 = SingletonClass.getInstance();
 		System.out.println(instance1 == instance2);
+		instance1.displayMessage();
+		instance2.displayMessage();
 	}
 }
