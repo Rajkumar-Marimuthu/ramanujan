@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.challenges;
+package com.rojatech.ramanujan.challenges.string;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

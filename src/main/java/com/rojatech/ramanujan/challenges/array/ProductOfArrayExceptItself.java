@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.challenges;
+package com.rojatech.ramanujan.challenges.array;
 
 public class ProductOfArrayExceptItself {
 

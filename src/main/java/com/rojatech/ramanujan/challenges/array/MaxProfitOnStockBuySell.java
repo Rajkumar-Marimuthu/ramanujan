@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch10.algorithm;
+package com.rojatech.ramanujan.challenges.array;
 
 public class MaxProfitOnStockBuySell {
 

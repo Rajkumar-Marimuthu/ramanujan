@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.ch10.algorithm;
+package com.rojatech.ramanujan.challenges.array;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -6,11 +6,9 @@ import java.util.Set;
 public class FindDuplicate {
 
 	public static void main(String[] args) {
-		//Input: n=7 , 
 		int[] arr = {1, 2, 3, 6, 3, 6, 1};
-		int alen = arr.length;
 		//Output: 1, 3, 6
-		//Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+		int alen = arr.length; // 7
 		Set<Integer> origSet = new HashSet<Integer>();
 		Set<Integer> dupSet = new HashSet<Integer>();
 
@@ -22,7 +20,5 @@ public class FindDuplicate {
 			}
 		}
 		System.out.println(dupSet);
-
 	}
-
 }

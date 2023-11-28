@@ -1,7 +1,15 @@
-package com.rojatech.ramanujan.ch10.algorithm;
+package com.rojatech.ramanujan.challenges.array;
 
 import java.util.Arrays;
 import java.util.HashSet;
+
+// Given an array A[] of n numbers and another number x, 
+// the task is to check whether or not there exist two elements in A[] whose sum is exactly x. 
+// Input: arr[] = {0, -1, 2, -3, 1}, x= -2
+// Output: Yes
+// Explanation:  If we calculate the sum of the output,1 + (-3) = -2
+// Input: arr[] = {1, -2, 1, 0, 5}, x = 0
+// Output: No
 
 public class CheckSumofPair {
 
@@ -41,7 +49,7 @@ public class CheckSumofPair {
 	
 	public static void main(String[] args) {
 		int A[] = { 1, 4, 45, 6, 10, -8 };
-        int n = 16;
+        int n = 7;
      
         
         Boolean res = IsSumOfPairMatched(A, n);

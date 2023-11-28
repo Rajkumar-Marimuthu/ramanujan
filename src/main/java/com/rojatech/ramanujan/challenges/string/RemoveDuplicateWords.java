@@ -1,4 +1,4 @@
-package com.rojatech.ramanujan.challenges;
+package com.rojatech.ramanujan.challenges.string;
 
 import java.util.HashSet;
 import java.util.Scanner;
