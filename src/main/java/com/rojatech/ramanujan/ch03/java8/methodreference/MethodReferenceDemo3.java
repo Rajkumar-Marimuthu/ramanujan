@@ -63,7 +63,6 @@ public class MethodReferenceDemo3 {
 		
 		personList.stream().map(p -> p.getAge()).forEach(System.out::println);
 		
-
 		List<String> nameList = new ArrayList<String>();
 		nameList.add("Vicky");
 		nameList.add("Ram");
